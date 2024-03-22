@@ -7,8 +7,7 @@ import StartPageAdmin_baj
 import StartPageAdmin_use_baj
 from  CTkMessagebox import CTkMessagebox
 from SampleApp_baj import LoginPage
-t=LoginPage()
-set_appearance_mode(f"{t.getMode()}")  # Modes: "System" (standard), "Dark", "Light"
+set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 set_default_color_theme("blue.json")  # Themes: "blue" (standard), "green", "dark-blue"
 
 class StartPageAdmin_Borrow(CTkFrame):
@@ -79,12 +78,13 @@ class StartPageAdmin_Borrow(CTkFrame):
         self.main_view.pack(side="left", fill="both", expand=True)
         self.toplevel_window = None
     def change_appearance_mode_event(self):
-        if LoginPage.getMode()=="Light":
-            LoginPage.newMode("Dark")
+        new_mode=get_appearance_mode()
+        if new_mode=="Light":
+            # LoginPage.newMode("Dark")
             set_appearance_mode("Dark")
         else:
             set_appearance_mode("Light")
-            LoginPage.newMode("Light")
+            # LoginPage.newMode("Light")
 
     def to_user(self):
         self.master.switch_frame(StartPageAdmin_use_baj.StartPageAdmin_use)

@@ -5,7 +5,6 @@ from PIL import Image
 from CTkXYFrame import *
 from  CTkMessagebox import CTkMessagebox
 import StartPageAdmin_baj
-import StartPageUSER_baj
 import os
 set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 set_default_color_theme("blue.json")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -85,19 +84,13 @@ class LoginPage(CTkFrame):
                     f=1
                     self.master.switch_frame(StartPageAdmin_baj.StartPageAdmin)
                     break
-                elif username == i[-1] and password == i[0]and (not i[1]in [1,2,3]): 
-                    self.master.switch_frame(StartPageUSER_baj.StartPageUSER)
-                    f=1
+           
                 if username =="1" :
                     f=1
                     self.master.switch_frame(StartPageAdmin_baj.StartPageAdmin)
                     break    
 
-                if username =="2" :
-                    f=1
-                    self.master.switch_frame(StartPageUSER_baj.StartPageUSER)
-                    break    
-                        
+            
             if f==0:
                 messagebox.showerror("Error", "Invalid username or password")
 

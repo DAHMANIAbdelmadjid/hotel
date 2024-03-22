@@ -1,14 +1,13 @@
 from customtkinter import *
 from CTkTable import CTkTable
-from PIL import Image
-# from date_li_user import *
+from PIL import Image# from date_li_user import *
 from CTkXYFrame import *
 from  CTkMessagebox import CTkMessagebox
 import StartPageAdmin_Borrow_baj
 import StartPageAdmin_baj
 from SampleApp_baj import LoginPage
-t=LoginPage()
-set_appearance_mode(f"{t.getMode()}")# Modes: "System" (standard), "Dark", "Light"
+
+set_appearance_mode("System")# Modes: "System" (standard), "Dark", "Light"
 set_default_color_theme("blue.json")
 class StartPageAdmin_use(CTkFrame):
     def __init__(self, master):
@@ -72,12 +71,13 @@ class StartPageAdmin_use(CTkFrame):
         self.main_view.pack(side="left", fill="both", expand=True)
         self.toplevel_window = None
     def change_appearance_mode_event(self):
-        if LoginPage.getMode()=="Light":
-            LoginPage.newMode("Dark")
+        new_mode=get_appearance_mode()
+        if new_mode=="Light":
+            # LoginPage.newMode("Dark")
             set_appearance_mode("Dark")
         else:
             set_appearance_mode("Light")
-            LoginPage.newMode("Light")
+            # LoginPage.newMode("Light")
 
     def to_Borrow(self):
         self.master.switch_frame(StartPageAdmin_Borrow_baj.StartPageAdmin_Borrow)
