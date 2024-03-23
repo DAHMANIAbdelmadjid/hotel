@@ -20,19 +20,19 @@ class StartPageAdmin_use(CTkFrame):
         self.sidebar_frame = CTkFrame(master=self, width=176, height=650, corner_radius=0)
         self.sidebar_frame.pack_propagate(0)
         
-        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}\\mode.png"), size=(20,20))
+        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}//mode.png"), size=(20,20))
         CTkButton(master=self.sidebar_frame, width=5,image=button_image,text="", font=("Arial Bold", 14),  anchor="w",command=self.change_appearance_mode_event).pack(anchor="sw", padx=5, pady=(16, 0))
 
-        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}\\receptionniste.png"), size=(100,100))
+        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}//receptionniste.png"), size=(100,100))
         CTkLabel(self.sidebar_frame,text="",image=button_image).pack(anchor="center", padx=5, pady=(16, 0))    
-        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}\\hotel.png"), size=(16,16))
+        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}//hotel.png"), size=(16,16))
 
         
         CTkButton(master=self.sidebar_frame, image=button_image,text="Rooms", font=("Arial Bold", 14), anchor="w",command=self.to_Book).pack(anchor="center", padx=5, pady=(16, 0))
-        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}\\profil.png"), size=(16, 16))
+        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}//profil.png"), size=(16, 16))
 
         CTkButton(master=self.sidebar_frame, text="Users", image=button_image, font=("Arial Bold", 14), anchor="w",command=self.to_now).pack(anchor="center", padx=5, pady=(16, 0))
-        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}\\service.png"), size=(20,20))
+        button_image = CTkImage(Image.open(f"{os.path.dirname(__file__)}//service.png"), size=(20,20))
 
         CTkButton(master=self.sidebar_frame, text="Borrow", image=button_image, font=("Arial Bold", 14) ,anchor="w",command=self.to_Borrow).pack(anchor="center", padx=5, pady=(16, 0))
 
